@@ -11,6 +11,7 @@
 
     <modules>
         <module>zlikun-jee-serialization-java</module>
+        <module>zlikun-jee-serialization-hessian</module>
     </modules>
 
     <properties>
@@ -26,7 +27,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 
