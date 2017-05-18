@@ -35,3 +35,10 @@ Java序列化库学习，包含：Java Serialization 、Hessian 、Protobuf等
 
 
 #### [Protobuf](https://github.com/google/protobuf/)序列化
+
+
+#### 其它序列化类库
+- [Kryo](https://github.com/EsotericSoftware/kryo)
+- [FST](https://github.com/RuedigerMoeller/fast-serialization)
+    - <http://ruedigermoeller.github.io/fast-serialization/>
+- [Protostuff]()http://www.protostuff.io/)
