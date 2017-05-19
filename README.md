@@ -27,6 +27,7 @@ Java序列化库学习，包含：Java Serialization 、Hessian 、Protobuf等
 ```
 
 - java.io.Externalizable
+
 ```
 # 通过Externalizable实现序列化、反序列化的好处是可以精确控制类的序列化行为
 ```
