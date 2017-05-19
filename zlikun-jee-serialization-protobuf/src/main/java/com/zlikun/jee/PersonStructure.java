@@ -130,6 +130,20 @@ public final class PersonStructure {
      * <code>required .com.zlikun.jee.Person.Gender gender = 5;</code>
      */
     com.zlikun.jee.PersonStructure.Person.Gender getGender();
+
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    boolean hasColor();
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    java.lang.String getColor();
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getColorBytes();
   }
   /**
    * Protobuf type {@code com.zlikun.jee.Person}
@@ -148,6 +162,7 @@ public final class PersonStructure {
       email_ = "";
       friends_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       gender_ = 0;
+      color_ = "";
     }
 
     @java.lang.Override
@@ -213,6 +228,12 @@ public final class PersonStructure {
                 bitField0_ |= 0x00000008;
                 gender_ = rawValue;
               }
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              color_ = bs;
               break;
             }
           }
@@ -525,6 +546,48 @@ public final class PersonStructure {
       return result == null ? com.zlikun.jee.PersonStructure.Person.Gender.MALE : result;
     }
 
+    public static final int COLOR_FIELD_NUMBER = 6;
+    private volatile java.lang.Object color_;
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    public boolean hasColor() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    public java.lang.String getColor() {
+      java.lang.Object ref = color_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          color_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string color = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getColorBytes() {
+      java.lang.Object ref = color_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        color_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -564,6 +627,9 @@ public final class PersonStructure {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(5, gender_);
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, color_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -593,6 +659,9 @@ public final class PersonStructure {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, gender_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, color_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -632,6 +701,11 @@ public final class PersonStructure {
       if (hasGender()) {
         result = result && gender_ == other.gender_;
       }
+      result = result && (hasColor() == other.hasColor());
+      if (hasColor()) {
+        result = result && getColor()
+            .equals(other.getColor());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -662,6 +736,10 @@ public final class PersonStructure {
       if (hasGender()) {
         hash = (37 * hash) + GENDER_FIELD_NUMBER;
         hash = (53 * hash) + gender_;
+      }
+      if (hasColor()) {
+        hash = (37 * hash) + COLOR_FIELD_NUMBER;
+        hash = (53 * hash) + getColor().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -802,6 +880,8 @@ public final class PersonStructure {
         bitField0_ = (bitField0_ & ~0x00000008);
         gender_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
+        color_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -847,6 +927,10 @@ public final class PersonStructure {
           to_bitField0_ |= 0x00000008;
         }
         result.gender_ = gender_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.color_ = color_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -914,6 +998,11 @@ public final class PersonStructure {
         }
         if (other.hasGender()) {
           setGender(other.getGender());
+        }
+        if (other.hasColor()) {
+          bitField0_ |= 0x00000020;
+          color_ = other.color_;
+          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1364,6 +1453,82 @@ public final class PersonStructure {
         onChanged();
         return this;
       }
+
+      private java.lang.Object color_ = "";
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public boolean hasColor() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public java.lang.String getColor() {
+        java.lang.Object ref = color_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            color_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getColorBytes() {
+        java.lang.Object ref = color_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          color_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public Builder setColor(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        color_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public Builder clearColor() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        color_ = getDefaultInstance().getColor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string color = 6;</code>
+       */
+      public Builder setColorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        color_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -1428,10 +1593,11 @@ public final class PersonStructure {
   static {
     java.lang.String[] descriptorData = {
       "\n\025PersonStructure.proto\022\016com.zlikun.jee\"" +
-      "\221\001\n\006Person\022\n\n\002id\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\r\n\005" +
+      "\240\001\n\006Person\022\n\n\002id\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\r\n\005" +
       "email\030\003 \001(\t\022\017\n\007friends\030\004 \003(\t\022-\n\006gender\030\005" +
-      " \002(\0162\035.com.zlikun.jee.Person.Gender\"\036\n\006G" +
-      "ender\022\010\n\004MALE\020\000\022\n\n\006FEMALE\020\001"
+      " \002(\0162\035.com.zlikun.jee.Person.Gender\022\r\n\005c" +
+      "olor\030\006 \001(\t\"\036\n\006Gender\022\010\n\004MALE\020\000\022\n\n\006FEMALE" +
+      "\020\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1450,7 +1616,7 @@ public final class PersonStructure {
     internal_static_com_zlikun_jee_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_zlikun_jee_Person_descriptor,
-        new java.lang.String[] { "Id", "Name", "Email", "Friends", "Gender", });
+        new java.lang.String[] { "Id", "Name", "Email", "Friends", "Gender", "Color", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

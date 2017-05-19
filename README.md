@@ -100,15 +100,34 @@ $ protoc -I=F:\temporary\protobuf --java_out=F:\temporary\protobuf\java F:\tempo
 # 3、测试序列化、反序列化
 
 # 4、Maven整合
-# https://github.com/igor-petruk/protobuf-maven-plugin
-# http://igor-petruk.github.io/protobuf-maven-plugin/
-# http://igor-petruk.github.io/protobuf-maven-plugin/usage.html
-# http://igor-petruk.github.io/protobuf-maven-plugin/run-mojo.html
+# https://github.com/sergei-ivanov/maven-protoc-plugin
+# https://www.xolstice.org/protobuf-maven-plugin/
+# https://www.xolstice.org/protobuf-maven-plugin/usage.html
+# https://www.xolstice.org/protobuf-maven-plugin/examples/protobuf-toolchain.html
+# pom.xml
+<plugin>
+    <groupId>org.xolstice.maven.plugins</groupId>
+    <artifactId>protobuf-maven-plugin</artifactId>
+    <version>0.5.0</version>
+    <configuration>
+        <protocExecutable>${project.basedir}/src/main/resources/protoc.exe</protocExecutable>
+        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+    </configuration>
+    <executions>
+        <execution>
+            <goals>
+                <goal>compile</goal>
+                <goal>test-compile</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 
+$ mvn clean protobuf:compile
 ```
 
 #### 其它序列化类库
 - [Kryo](https://github.com/EsotericSoftware/kryo)
 - [FST](https://github.com/RuedigerMoeller/fast-serialization)
     - <http://ruedigermoeller.github.io/fast-serialization/>
-- [Protostuff]()http://www.protostuff.io/)
+- [Protostuff](http://www.protostuff.io/)
