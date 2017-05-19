@@ -13,6 +13,7 @@
         <module>zlikun-jee-serialization-java</module>
         <module>zlikun-jee-serialization-hessian</module>
         <module>zlikun-jee-serialization-protobuf</module>
+        <module>zlikun-jee-serialization-kryo</module>
     </modules>
 
     <properties>
