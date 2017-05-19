@@ -42,6 +42,70 @@ Java序列化库学习，包含：Java Serialization 、Hessian 、Protobuf等
 
 #### [Protobuf](https://github.com/google/protobuf/)序列化
 
+- 参考资料(需要翻墙)
+    - <https://developers.google.com/protocol-buffers/>
+    - <https://developers.google.com/protocol-buffers/docs/overview>
+    - <https://developers.google.com/protocol-buffers/docs/proto>
+    - <https://developers.google.com/protocol-buffers/docs/proto3>
+    - <https://developers.google.com/protocol-buffers/docs/reference/proto2-spec>
+    - <https://developers.google.com/protocol-buffers/docs/reference/proto3-spec>
+    - <https://developers.google.com/protocol-buffers/docs/javatutorial>
+    - <https://developers.google.com/protocol-buffers/docs/reference/java-generated>
+    - <https://developers.google.com/protocol-buffers/docs/reference/java/>
+    - <https://developers.google.com/protocol-buffers/docs/encoding>
+
+- 使用说明
+
+```
+# 下载相关组件：https://github.com/google/protobuf/releases
+# https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-win32.zip
+# https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.0-linux-x86_64.zip
+# https://github.com/google/protobuf/releases/download/v3.3.0/protobuf-java-3.3.0.tar.gz
+
+# protoc-3.3.0-win32.zip 中包含 protoc.exe ，是protobuf代码生成工具
+
+# 1、定义protobuf数据结构，需要编写一个.proto文件，如下示例
+# PersonStructure.proto (注意文件名不要与内部定义的message名相同)
+syntax = "proto2";
+
+package com.zlikun.jee;
+
+message Person {
+	
+	// ID (必需)
+	required int32 id = 1;
+	
+	// 姓名 (必需)
+	required string name = 2;
+	
+	// email (可选)
+	optional string email = 3;
+
+	// 朋友 (集合)
+	repeated string friends = 4;
+
+	required Gender gender = 5;
+
+	enum Gender {
+		MALE = 0;
+		FEMALE = 1;
+	}
+}
+
+# 2、使用protoc.exe生成Java代码
+$ protoc --version
+libprotoc 3.3.0
+$ protoc -I=F:\temporary\protobuf --java_out=F:\temporary\protobuf\java F:\temporary\protobuf\PersonStructure.proto
+
+# 3、测试序列化、反序列化
+
+# 4、Maven整合
+# https://github.com/igor-petruk/protobuf-maven-plugin
+# http://igor-petruk.github.io/protobuf-maven-plugin/
+# http://igor-petruk.github.io/protobuf-maven-plugin/usage.html
+# http://igor-petruk.github.io/protobuf-maven-plugin/run-mojo.html
+
+```
 
 #### 其它序列化类库
 - [Kryo](https://github.com/EsotericSoftware/kryo)
