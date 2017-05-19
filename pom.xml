@@ -15,6 +15,7 @@
         <module>zlikun-jee-serialization-protobuf</module>
         <module>zlikun-jee-serialization-kryo</module>
         <module>zlikun-jee-serialization-fst</module>
+        <module>zlikun-jee-serialization-benchmark</module>
     </modules>
 
     <properties>

@@ -133,3 +133,12 @@ $ mvn clean protobuf:compile
     - <https://github.com/RuedigerMoeller/fast-serialization/wiki/Serialization>
     - <http://ruedigermoeller.github.io/fast-serialization/>
 - [Protostuff](http://www.protostuff.io/)
+
+#### Benchmark
+
+- 测试方法
+    - 测试小对象序列化，观察序列化(反序列化)速度、生成字节数大小、CPU等服务器指标
+    - 测试大对象(字段数较多，包含大文本字段、集合字段等)序列化，观察序列化(反序列化)速度、生成字节数大小、CPU等服务器指标
+    - 列出JDK6/7/8等支持情况，性能差异
+- 测试结论
+(暂无)
