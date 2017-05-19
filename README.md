@@ -130,5 +130,6 @@ $ mvn clean protobuf:compile
 #### 其它序列化类库
 - [Kryo](https://github.com/EsotericSoftware/kryo)
 - [FST](https://github.com/RuedigerMoeller/fast-serialization)
+    - <https://github.com/RuedigerMoeller/fast-serialization/wiki/Serialization>
     - <http://ruedigermoeller.github.io/fast-serialization/>
 - [Protostuff](http://www.protostuff.io/)
