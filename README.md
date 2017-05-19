@@ -32,7 +32,13 @@ Java序列化库学习，包含：Java Serialization 、Hessian 、Protobuf等
 ```
 
 #### [Hessian](http://hessian.caucho.com/)序列化
-
+```
+# 注意事项
+1、Hessian2Output在使用时，必须在获取字节数据前关闭，否则得到的字节数组长度为0，HessianOutput则无此问题(尽量都使用该用法)
+2、Hessian2Output序列化的字节数组长度比HessianOutput略长，说见测试用例
+3、Hessian序列化与Java原生序列化相同部分：需要实现Serializable接口、transient关键字不参与序列化/反序列化
+4、通过SerializerFactory设置allowNonSerializable属性为true，可以实现未实现Serializable接口类序列化/反序列化
+```
 
 #### [Protobuf](https://github.com/google/protobuf/)序列化
 
